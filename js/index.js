@@ -1,6 +1,6 @@
 async function random_assets (){
     //สุ่ม background image จาก backend
-    const background = await fetch('/client/assets/json/background.json');
+    const background = await fetch('/json/background.json');
     const json = await background.json();
 
     console.log(json["background"])
@@ -9,5 +9,5 @@ async function random_assets (){
     document.getElementById("body_main").setAttribute("background", json["background"][random]);
 
     //สุ่ม logo
-    
+
 }
