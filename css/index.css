@@ -7,19 +7,24 @@
     background-color: #333;
 }
 
-.navbar-logo {
+.navbar-logo img {
+    float: left;
+    margin-top: 0.7vh;
+    margin-right: 2%;
+    margin-left: 2%;
 }
 
 .navbar-list{
     display: inline;
     list-style-type: none;
-    margin: 0;
+    margin-top: 0.7vh;
     padding: 0;
 }
 
 .navbar-list-item {
-    display: inline;
+    margin-top: 0.7vh;
     float: left;
+
 }
 
 .navbar-list-item a {
