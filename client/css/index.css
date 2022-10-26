@@ -1,10 +1,12 @@
 /* navbar */
 .navbar {
+    display: inline;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: #333;
 }
+
 .navbar ul{
     list-style-type: none;
     margin: 0;
@@ -29,8 +31,4 @@ li a {
 
 .active {
     background-color: #04AA6D;
-}
-
-/* background full screen */
-body {
 }
