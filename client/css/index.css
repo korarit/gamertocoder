@@ -30,3 +30,7 @@ li a {
 .active {
     background-color: #04AA6D;
 }
+
+/* background full screen */
+body {
+}
