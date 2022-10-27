@@ -1,7 +1,6 @@
 /* navbar */
 .navbar {
 
-    margin-bottom: 3rem;
     padding: 0;
     overflow: hidden;
     background-color: hsla(309, 0%, 0%, 0.54);
@@ -234,6 +233,34 @@
 }
 
 
+/* layout */
+.layout-fullheight{
+    height: 82vh;
+
+    padding-top: 1rem;
+}
+.layout-half{
+    height: 41vh;
+
+    padding-top: 1rem;
+}
+.layout-large{
+    height: 61vh;
+
+    padding-top: 1rem;
+}
+.layout-medium{
+    height: 31vh;
+
+    padding-top: 1rem;
+}
+.layout-small{
+    height: 21vh;
+
+    padding-top: 1rem;
+}
+
+
 /* logo bloackman go */
 .blockmango-logo {
     width: 750px;
@@ -289,6 +316,16 @@
 
     .blockmango-logo {
         width: 500px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .navbar-logo img {
+        width: 220px;
+    }
+
+    .blockmango-logo {
+        width:340px;
     }
 }
 
