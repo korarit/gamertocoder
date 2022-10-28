@@ -12,3 +12,23 @@ async function random_assets (){
     const logo = await fetch('/json/logo.json');
     const logo_json = await logo.json();
 }
+
+//scoll animation
+function reveal() {
+    var reveals = document.querySelectorAll(".animated");
+  
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+  
+      if (elementTop < windowHeight - elementVisible) {
+       // reveals[i].classList.add("animatedFadeInUp");
+        reveals[i].classList.add("fadeInUp");
+      } else {
+        //reveals[i].classList.remove("animatedFadeInUp");
+        reveals[i].classList.remove("fadeInUp");
+      }
+    }
+}
+window.addEventListener("scroll", reveal);
