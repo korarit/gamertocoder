@@ -74,7 +74,8 @@ body {
     flex-direction: row;
 }
 .row.is-centered{
-    justify-content: center
+    justify-content: center;
+    align-items: center;
 }
 .row.is-gap {
     margin-right: 0;
@@ -273,30 +274,35 @@ body {
 .layout{
     width: 100%;
 }
-.layout-fullheight{
+.layout.layout-fullheight{
     height: 91vh;
 
     padding-top: 2.5rem;
+    margin-bottom: 0.1rem;
 }
-.layout-half{
+.layout.layout-half{
     height: 50vh;
 
     padding-top: 1rem;
+    margin-bottom: 0.1rem;
 }
-.layout-large{
+.layout.layout-large{
     height: 65vh;
 
     padding-top: 1rem;
+    margin-bottom: 0.1rem;
 }
-.layout-medium{
+.layout.layout-medium{
     height: 55vh;
 
     padding-top: 1rem;
+    margin-bottom: 0.1rem;
 }
-.layout-small{
+.layout.layout-small{
     height: 45vh;
 
     padding-top: 1rem;
+    margin-bottom: 0.1rem;
 }
 
 /* card */
@@ -367,13 +373,28 @@ body {
     display: flex;
 }
 
+/* image */
+.image img {
+    width: 100%;
+    height: auto;
+}
+
+/* device user*/
+.user-desktop {
+    display: block;
+}
+.user-tablet {
+    display: none;
+}
+.user-mobile {
+    display: none;
+}
+
 /* logo bloackman go */
 .blockmango-logo {
     width: 750px;
     margin-bottom: 3rem;
 }
-
-
 
 
 /* Responsive */
@@ -451,6 +472,18 @@ body {
     .card {
         width: 100%;
     }
+
+
+    /* device user*/
+    .user-desktop {
+        display: none;
+    }
+    .user-tablet {
+        display: block;
+    }
+    .user-mobile {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 540px) {
@@ -462,6 +495,22 @@ body {
 
     .blockmango-logo {
         width:340px;
+    }
+
+    .user-mobile {
+        display: block;
+    }
+
+
+    /* device user*/
+    .user-desktop {
+        display: none;
+    }
+    .user-tablet {
+        display: none;
+    }
+    .user-mobile {
+        display: block;
     }
 }
 
