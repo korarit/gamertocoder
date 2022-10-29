@@ -14,9 +14,10 @@ async function random_assets (){
 }
 
 //scoll animation
-function reveal() {
+function scoll_animation() {
     var reveals = document.querySelectorAll(".animated");
   
+    //scoll down animation
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
@@ -25,10 +26,26 @@ function reveal() {
       if (elementTop < windowHeight - elementVisible) {
        // reveals[i].classList.add("animatedFadeInUp");
         reveals[i].classList.add("fadeInUp");
+
       } else {
         //reveals[i].classList.remove("animatedFadeInUp");
         reveals[i].classList.remove("fadeInUp");
       }
     }
 }
-window.addEventListener("scroll", reveal);
+
+function nav_sticky(){
+  var navbar = document.getElementById("navbar-body");
+  var sticky = navbar.offsetTop;
+
+  if (window.pageYOffset > 0) {
+    navbar.classList.add("is-top")
+  } else {
+    navbar.classList.remove("is-top");
+  }
+
+  console.log("pageY:"+window.pageYOffset+" sticky:"+navbar.offsetTop)
+
+}
+window.addEventListener("scroll", scoll_animation);
+window.addEventListener("scroll", nav_sticky);
