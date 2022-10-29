@@ -12,11 +12,18 @@ async function random_assets (){
   var random_background = Math.floor(Math.random() * ((background["background"].length - 1) - 0 + 1)) + 0;
   document.getElementById("body_main").setAttribute("background", background["background"][random_background]);
 
-  //สุ่ม ตัวละคร
-  const characters = await get_json('/json/characters.json');
-  var random_character = Math.floor(Math.random() * ((characters["characters"].length - 1) - 0 + 1)) + 0;
-  document.getElementById("character_speak").setAttribute("src", characters["characters"][random_character]);
+  //สุ่ม wallpaper card background
+  const wallpaper = await get_json('/json/wallpapers.json');
+  var wallpaper_character1 = Math.floor(Math.random() * ((wallpaper["wallpaper"].length - 1) - 0 + 1)) + 0;
+  var wallpaper_character2 = Math.floor(Math.random() * ((wallpaper["wallpaper"].length - 1) - 0 + 1)) + 0;
 
+  //ตรวจสอบภาพ wallpaper ว่าซ้ำไหม
+  if(wallpaper_character1 != wallpaper_character2){
+    document.getElementById("wallpaper1").setAttribute("src", wallpaper["wallpaper"][wallpaper_character1]);
+    document.getElementById("wallpaper2").setAttribute("src", wallpaper["wallpaper"][wallpaper_character2]);
+  }else{
+    random_assets()
+  }
 }
 
 //scoll animation

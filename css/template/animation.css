@@ -1,0 +1,66 @@
+/*  animation framework for workshop 10 gamer to coder by Korarit Saengthong Team เริ่มต้นจากเกมส์ */
+
+
+/* fadeInUp */
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+.animated {
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 2s;
+    animation-fill-mode: bothh;
+
+}
+
+
+.animated-1 {
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 2s;
+    animation-fill-mode: bothh;
+
+    animation-delay: 1s;
+}
+
+.animated-2 {
+    -webkit-animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 2s;
+    animation-fill-mode: bothh;
+
+    animation-delay: 2s;
+}
+
+.animated-3 {
+    -webkit-animation-duration: 10s;
+    -webkit-animation-fill-mode: both;
+    animation-duration: 10s;
+    animation-fill-mode: bothh;
+
+    animation-delay: 3s;
+}
+
+.fadeInUp {
+    opacity: 0;
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+}

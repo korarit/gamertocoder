@@ -6,16 +6,20 @@
 
         <title>หน้าหลัก</title>
         <!-- css custom-->
-        <link rel="stylesheet" href="/css/template.css">
-        <link rel="stylesheet" href="/css/animation.css">
+        <link rel="stylesheet" href="/css/template/animation.css">
+        <link rel="stylesheet" href="/css/template/template.css">
 
         <!-- fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
 
+        <!-- fontawesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     </head>
     <body onload="random_assets()" id="body_main">
+        <!-- navbar -->
         <div class="navbar" id="navbar-body">
             <div class="navbar-logo">
                 <img id="logo" src="https://cdngarenanow-a.akamaihd.net/webth/cdn/garena/gamertocoder/bmg-logo/01.png" width="350px"/>
@@ -25,33 +29,33 @@
 
                 <div class="navbar-list-item"><a class="navbar-item-active" href="#home">หน้าหลัก</a></div>
                 <div class="navbar-list-item"><a href="#contact">กิจกรรม</a></div>
-                <div class="navbar-list-item"><a href="#news">ตัวละคร</a></div>
-                <div class="navbar-list-item"><a href="#news">มินิเกม</a></div>
                 <div class="navbar-list-item"><a href="#about">ดาวน์โหลด</a></div>
             </div>
         </div>
 
-        <!--logo-->
+        <!--logo and button more data-->
         <div class="layout layout-fullheight">
 
             <div class="container is-align-center-point" style="width: 70%;">
                 <div class="row">
-                    <div class="column size-is-10 animated">
+                    <div class="column size-is-10 animated-1">
                         <center><img src="https://cdngarenanow-a.akamaihd.net/webth/cdn/garena/gamertocoder/bmg-logo/03.png" class="blockmango-logo"></center>
                     </div>
                 </div>
                 <div class="row">
                     <div class="column size-is-10">
-                        <center><button class="button-large button-success" style="max-width: 40rem;">อ่านเพิ่มเติม</button></center>
+                        <center><button class="button-large button-success" onclick="click_toLayout(1)" style="max-width: 40rem;">อ่านเพิ่มเติม</button></center>
                     </div>
                 </div>
             </div>
 
         </div>
+
+        <!-- more data-->
         <div class="layout layout-small is-align-center" style="width: 80%;">
-            <div class="row is-gap">
+            <div class="row is-gap is-multiline">
                 <div class="column size-is-5 is-align-center">
-                    <div class="image animated">
+                    <div class="image animated-1">
                     <img id="character_speak" >
                     </div>
                 </div>
@@ -92,6 +96,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
 
         </div>
