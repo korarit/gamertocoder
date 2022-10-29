@@ -67,47 +67,76 @@ body {
     background-color: #04AA6D;
 }
 
-  
+
+/* row */  
 .row {
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    display: flex;
+    flex-direction: row;
+}
+.row.is-centered{
+    justify-content: center
+}
+.row.is-gap {
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0
+}
+.row.is-gap:not(:last-child) {
+    margin-bottom: 2rem
+}
+
+.row.is-gap:last-child {
+    margin-bottom: 0
 }
 
 /* size column */
-.column-is-1 {
-    grid-column-end: span 1;
+.column{
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
-.column-is-2 {
-    grid-column-end: span 2;
+.column.size-is-1 {
+    flex: 10%;
 }
-.column-is-3 {
-    grid-column-end: span 3;
+.column.size-is-2 {
+    flex: 20%;
 }
-.column-is-4 {
-    grid-column-end: span 4;
+.column.size-is-3 {
+    flex: 30%;
 }
-.column-is-5 {
-    grid-column-end: span 5;
+.column.size-is-4 {
+    flex: 40%;
 }
-.column-is-6 {
-    grid-column-end: span 6;
+.column.size-is-5 {
+    flex: 50%;
 }
-.column-is-7 {
-    grid-column-end: span 7;
+.column.size-is-6 {
+    flex: 60%;
 }
-.column-is-8 {
-    grid-column-end: span 8;
+.column.size-is-7 {
+    flex: 70%;
 }
-.column-is-9 {
-    grid-column-end: span 9;
+.column.size-is-8 {
+    flex: 80%;
 }
-.column-is-10 {
-    grid-column-end: span 10;
+.column.size-is-9 {
+    flex: 90%;
+}
+.column.size-is-10 {
+    flex: 100%;
 }
 
 /* item align */
 .is-align-center{
     margin: 0 auto;
+}
+.is-align-center-point{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -245,9 +274,9 @@ body {
     width: 100%;
 }
 .layout-fullheight{
-    height: 90vh;
+    height: 91vh;
 
-    padding-top: 1rem;
+    padding-top: 2.5rem;
 }
 .layout-half{
     height: 50vh;
@@ -278,9 +307,8 @@ body {
 
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-    width: max-content;
 
-    position: relative;
+
 }
 
 .card-content:first-child,
@@ -299,10 +327,14 @@ body {
 
 .card-header {
     background-color: transparent;
-    align-items: stretch;
-    display: flex;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card-title {
+    font-size: 35px;
+    font-family: 'Mitr', sans-serif;
+    text-align: center;
 }
 
 .card-image{
@@ -321,13 +353,11 @@ body {
     border-bottom-right-radius: 8px;
 }
 
-.card-image img{
-    width: 20rem;
-}
-
 .card-content {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
     background-color: transparent;
-    padding: 15px;
 }
 
 .card-footer {
@@ -336,7 +366,6 @@ body {
     align-items: stretch;
     display: flex;
 }
-
 
 /* logo bloackman go */
 .blockmango-logo {
@@ -415,38 +444,12 @@ body {
 
     /* row column grid */
     .row {
-        grid-row-gap: 2rem;
+        flex-direction: column;
     }
 
-    .column-is-1 {
-        grid-column-end: span 10;
-    }
-    .column-is-2 {
-        grid-column-end: span 10;
-    }
-    .column-is-3 {
-        grid-column-end: span 10;
-    }
-    .column-is-4 {
-        grid-column-end: span 10;
-    }
-    .column-is-5 {
-        grid-column-end: span 10;
-    }
-    .column-is-6 {
-        grid-column-end: span 10;
-    }
-    .column-is-7 {
-        grid-column-end: span 10;
-    }
-    .column-is-8 {
-        grid-column-end: span 10;
-    }
-    .column-is-9 {
-        grid-column-end: span 10;
-    }
-    .column-is-10 {
-        grid-column-end: span 10;
+    /* card */
+    .card {
+        width: 100%;
     }
 }
 
