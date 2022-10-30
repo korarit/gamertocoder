@@ -113,6 +113,10 @@
     border-radius: 30px;
 }
 
+.menu-icon:hover {
+    color: #e40000;
+}
+
 /* user-menu */
 #user-menu[closing] {
     opacity: 0;

@@ -62,3 +62,4 @@ function nav_sticky(){
 }
 window.addEventListener("scroll", scoll_animation);
 window.addEventListener("scroll", nav_sticky);
+

@@ -75,11 +75,15 @@ window.addEventListener("scroll", nav_sticky);
 function showModal(id){
   var modal = document.getElementById(id);
   modal.style.display = "block";
+
+  document.querySelector("#body_main").classList.add("stop-scroll");
 }
 
 function closeModal(id){
   var modal = document.getElementById(id);
   modal.style.display = "none";
+
+  document.querySelector("#body_main").classList.remove("stop-scroll");
 }
 
 function checkLogin(){

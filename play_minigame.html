@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="/css/template/template.css">
 
         <!-- css page -->
-        <link rel="stylesheet" href="/css/activity.css">
+        <link rel="stylesheet" href="/css/play_minigame.css">
 
         <!-- fonts-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         
     </head>
-    <body onload="random_assets()" id="body_main">
+    <body onload="random_assets();minigame_list();cooldown()" id="body_main">
         <!-- navbar -->
         <div class="navbar" id="navbar-body">
             <div class="navbar-logo">
@@ -36,15 +36,63 @@
             </div>
         </div>
 
-        <!-- เมนู กิจกรรม-->
-        <div class="layout layout-small" style="width: 90%;">
+        <!-- สุ่มมิเกม-->
+        <div class="layout layout-fullheight" style="width: 90%;">
 
             <div class="is-align-center-point">
-                aaa
+                <div class="row">
+                    <div class="column size-is-10">
+                        <p class="title-activity">กิจกรรมเล่นแบบสุ่มลุ้นทุกอย่าง</p>
+                    </div>
+                </div>
+                <div class="row is-multiline">
+                    <div class="column size-is-5">
+                        <div id="play-button" style="display: none;">
+                            <center><button class="button is-large is-info" style="width: 100%;text-align: center;" onclick="random_minigame()">สุ่มมินิเกม</button></center>
+                        </div>
+                        <div id="time-play" class="cooldown" style="display: block;">
+                            
+                        </div>
+                    </div>
+                    <div class="column size-is-5">
+                        <center><button onclick="click_toLayout(1)" class="button is-large is-warning" style="width: 100%;text-align: center;">รายชื่อมินิเกม</button></center>
+                    </div>
+                </div>
             </div>
 
         </div>
+
+        <!-- รายชื่อ minigame-->
+        <div class="layout layout-fullheight is-center" style="width: 90%;">
+            <div class="row">
+                <div class="column size-is-10">
+                    <p class="title-minigame">รายชื่อมินิเกม</p>
+                </div>
+            </div>
+            <div class="row is-multiline is-centered" id="list-minigame">
+                <!-- in javascript-->
+            </div>
+
+        </div>
+
+        <!-- gacha -->
+        <!-- login modal-->
+        <div id="gachaModal" class="modal gacha-modal">
+            <div class="row is-multiline">
+                <div class="column size-is-10">
+                    <img id="gacha-img" class="modal-image">
+                </div>
+                <div class="column size-is-10">
+                    <div id="receive-gacha" style="display: none;">
+                        <center><button onclick="closeModal('gachaModal')" class="button is-large is-primary">เล่นมินิเกม</button></center>
+                    </div>
+                    <div id="gacha-again" style="display: none;">
+                        <center><button onclick="random_minigame()" class="button is-large is-warning">สุ่มอีกครั้ง</button></center>
+                    </div>
+                </div>
+            <div>
+        </div>
     </body>
     <!-- script -->
-    <script src="/js/activity.js"></script>
+    <script src="/js/play_minigame.js"></script>
 </html>

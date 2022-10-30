@@ -98,70 +98,70 @@ body {
     margin: 0.75rem;
 }
 .column.size-is-1 {
-    flex: 10%;
+    flex: 7%;
 }
 .column.size-is-15 {
-    flex: 10%;
+    flex: 12%;
 }
 
 .column.size-is-2 {
-    flex: 20%;
+    flex: 17%;
 }
 .column.size-is-25 {
-    flex: 20%;
+    flex: 23%;
 }
 
 .column.size-is-3 {
-    flex: 30%;
+    flex: 27%;
 }
 .column.size-is-35 {
-    flex: 35%;
+    flex: 32%;
 }
 
 .column.size-is-4 {
-    flex: 40%;
+    flex: 37%;
 }
 .column.size-is-45 {
-    flex: 45%;
+    flex: 42%;
 }
 
 .column.size-is-5 {
-    flex: 50%;
+    flex: 47%;
 }
 .column.size-is-55 {
-    flex: 55%;
+    flex: 52%;
 }
 
 .column.size-is-6 {
-    flex: 60%;
+    flex: 57%;
 }
 .column.size-is-65 {
-    flex: 65%;
+    flex: 62%;
 }
 
 .column.size-is-7 {
-    flex: 70%;
+    flex: 67%;
 }
 .column.size-is-75 {
-    flex: 75%;
+    flex: 72%;
 }
 
 .column.size-is-8 {
-    flex: 80%;
+    flex: 77%;
 }
 .column.size-is-85 {
-    flex: 85%;
+    flex: 82%;
 }
 
 .column.size-is-9 {
-    flex: 90%;
+    flex: 87%;
 }
 .column.size-is-95 {
-    flex: 95%;
+    flex: 92%;
 }
 
 .column.size-is-10 {
-    flex: 100%;
+    flex: 97%;
 }
 
 /* item align */
@@ -181,6 +181,7 @@ body {
 /* button */
 .button {
     border: 0px;
+    font-family: 'Mitr', sans-serif;
 }
 .button.is-small {
     height: 2.2rem;
@@ -295,19 +296,19 @@ body {
 }
 
 .button.is-warning{
-    background-color: hsl(48, 100%, 67%);
+    background-color: hsl(48, 100%, 50%);
     color: hsl(0, 0%, 4%);
 }
-.button.is-warning{
-    background-color: hsl(48, 78%, 62%);
+.button.is-warning:hover{
+    background-color: hsl(48, 100%, 40%);
     color: hsl(0, 0%, 4%);
 }
 
-.button.is-warning{
+.button.is-danger{
     background-color: hsl(348, 100%, 61%);
     color: hsl(0, 0%, 100%);
 }
-.button.is-warning:hover{
+.button.is-danger:hover{
     background-color: hsl(348, 73%, 54%);
     color: hsl(0, 0%, 100%);
 }
@@ -357,6 +358,9 @@ body {
 
     padding-top: 1rem;
     margin-bottom: 0.1rem;
+}
+.layout.is-center{
+    margin: auto;
 }
 
 /* card */
@@ -446,10 +450,15 @@ body {
     left: 0;
     top: 0;
     width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    height: 100vh; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.7); /* Black w/ opacity */
+}
+.stop-scroll {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
 }
 .modal-content {
     border-radius: 5px;
@@ -664,7 +673,11 @@ body {
 
     /* row column grid */
     .row {
-        flex-direction: column;
+        flex-direction: row;
+    }
+
+    .column.size-is-25{
+        flex: 47%;
     }
 
     /* button */
@@ -696,7 +709,10 @@ body {
 
     /* row column grid */
     .row {
-        flex-direction: column;
+        flex-direction: row;
+    }
+    .column.size-is-25{
+        flex: 45%;
     }
 
     /* modal size */
@@ -780,6 +796,10 @@ body {
     }
     .user-mobile {
         display: block;
+    }
+
+    .column.size-is-25 {
+        flex: 45%;
     }
 }
 
