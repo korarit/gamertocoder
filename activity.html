@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         
     </head>
-    <body onload="random_assets()" id="body_main">
+    <body onload="random_assets();checkLogin()" id="body_main">
         <!-- navbar -->
         <div class="navbar" id="navbar-body">
             <div class="navbar-logo">
@@ -61,6 +61,58 @@
             </div>
 
         </div>
+
+        <!-- login modal-->
+        <div id="LoginModal" class="modal login-modal">
+
+            <!-- Modal content -->
+            <div class="modal-content width is-30">
+              <div class="modal-title">
+              <t>เข้าสู่ระบบ</t>
+              </div>
+              <hr>
+              <div class="modal-data">
+                <div class="row is-multiline">
+                    <div class="column size-is-10">
+                        <center><button onclick="summitLogin('username','xxxx')" class="button is-normal is-dark" style="width: 80%;"><i class="fa-solid fa-user button-icon" ></i>Username</button></center>
+                    </div>
+                    <div class="column size-is-10">
+                        <center><button onclick="summitLogin('gmail','xxxx')" class="button is-normal is-warning" style="width: 80%;"><i class="fa-brands fa-google button-icon" ></i>Gmail</button></center>
+                    </div>
+                    <div class="column size-is-10">
+                        <center><button onclick="summitLogin('facebook','xxxx')" class="button is-normal is-link" style="width: 80%;"><i class="fa-brands fa-facebook button-icon" ></i>Facebook</button></center>
+                    </div>
+                    <div class="column size-is-10">
+                        <center><button onclick="summitLogin('line','xxxx')" class="button is-normal is-success" style="width: 80%;"><i class="fa-brands fa-line button-icon" ></i>Line</button></center>
+                    </div>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+
+        <!-- user button -->
+        <button onclick="userMenu('open')" id="UserButton"><i class="fa-solid fa-user"></i></button>
+        <!-- user menu-->
+        <div class="user_menu animated fadeInUp" id="user-menu">
+            <div class="row">
+                <div class="column size-is-10">
+                    <i class="fa-solid fa-right-from-bracket" onclick="logout()"></i>
+                </div>
+            </div>
+            <div class="row" style="height: 0.5rem;">
+                
+            </div>
+            <div class="row">
+                <div class="column size-is-10">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- close user menu-->
+        <button onclick="userMenu('close')" id="Close_userMenu"><i class="fa-solid fa-xmark"></i></button>
+
     </body>
     <!-- script -->
     <script src="/js/activity.js"></script>

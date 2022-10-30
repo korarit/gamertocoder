@@ -64,8 +64,71 @@ function nav_sticky(){
     navbar.classList.remove("is-top");
   }
 
-  console.log("pageY:"+window.pageYOffset+" sticky:"+navbar.offsetTop)
+  //console.log("pageY:"+window.pageYOffset+" sticky:"+navbar.offsetTop)
 
 }
 window.addEventListener("scroll", scoll_animation);
 window.addEventListener("scroll", nav_sticky);
+
+
+//login modal
+function showModal(id){
+  var modal = document.getElementById(id);
+  modal.style.display = "block";
+}
+
+function closeModal(id){
+  var modal = document.getElementById(id);
+  modal.style.display = "none";
+}
+
+function checkLogin(){
+  if(localStorage.getItem("login") === null){
+    showModal("LoginModal");
+    document.getElementById("UserButton").style.display = "none";
+  }else{
+    document.getElementById("UserButton").style.display = "block";
+  }
+}
+
+function summitLogin(type, id){
+  var data = {};
+  data["type"] = type;
+  data["id"] = id;
+
+  localStorage.setItem("login", JSON.stringify(data));
+  closeModal("LoginModal");
+
+  document.getElementById("UserButton").style.display = "block";
+}
+
+function logout(){
+  localStorage.removeItem("login");
+
+  showModal("LoginModal");
+
+  //ปิดการแสดงส่วน menu user ทั้งหมด
+  document.getElementById("UserButton").style.display = "none";
+  document.getElementById("Close_userMenu").style.display = "none";
+  document.getElementById("user-menu").style.display = "none";
+}
+
+
+//menu จัดการ user
+function userMenu(type){
+  if(type === 'open'){
+
+    //button
+    document.getElementById("UserButton").style.display = "none";
+    document.getElementById("Close_userMenu").style.display = "block";
+    //meun
+    document.getElementById("user-menu").style.display = "block";
+  } else if (type === 'close'){
+
+    //button
+    document.getElementById("UserButton").style.display = "block";
+    document.getElementById("Close_userMenu").style.display = "none";
+    //menu
+    document.getElementById("user-menu").style.display = "none";
+  }
+}

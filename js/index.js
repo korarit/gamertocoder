@@ -21,7 +21,7 @@ async function random_assets (){
 
 //scoll animation
 function scoll_animation() {
-    var reveals = document.querySelectorAll(".animated");
+    var reveals = document.querySelectorAll(".play-animation");
   
     //scoll down animation
     for (var i = 0; i < reveals.length; i++) {
@@ -57,7 +57,7 @@ function nav_sticky(){
     navbar.classList.remove("is-top");
   }
 
-  console.log("pageY:"+window.pageYOffset+" sticky:"+navbar.offsetTop)
+  //console.log("pageY:"+window.pageYOffset+" sticky:"+navbar.offsetTop)
 
 }
 window.addEventListener("scroll", scoll_animation);

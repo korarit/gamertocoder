@@ -52,11 +52,102 @@
     text-align: center;
 }
 
+/* modal */
+.modal.login-modal {
+    padding-top: 30vh; /* Location of the box */
+}
+
+/* user menu */
+#UserButton {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background-color: rgb(0, 102, 255);
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 9999px;
+}
+#UserButton:hover {
+    background-color: rgb(2, 66, 126);
+}
+
+#Close_userMenu {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    border-radius: 9999px;
+}
+#Close_userMenu:hover {
+    background-color: rgb(73, 73, 73);
+}
+.user_menu {
+    display: none;
+    position: fixed;
+
+
+    bottom: 120px;
+    right: 25px;
+    z-index: 99;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 30px;
+}
+
+/* user-menu */
+#user-menu[closing] {
+    opacity: 0;
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+
 
   /* Responsive */
 @media screen and (max-width: 1280px) {
     .text {
         font-size: 25px;
+    }
+
+    .modal.login-modal {
+        padding-top: 27vh; /* Location of the box */
+    }
+
+    /* user menu */
+    #UserButton, 
+    #Close_userMenu  {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        font-size: 60px;
+        padding: 20px;
+        border-radius: 99999px;
+    }
+    .user_menu {    
+        bottom: 150px;
+        right: 30px;
+        font-size: 40px;
+
     }
 }
   
@@ -64,11 +155,58 @@
     .text {
         font-size: 25px;
     }
+
+    .modal.login-modal {
+        padding-top: 20vh; /* Location of the box */
+    }
+
+    /* user menu */
+    #UserButton, 
+    #Close_userMenu {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        font-size: 40px;
+        padding: 20px;
+        border-radius: 99999px;
+    }
+
+    .user_menu {
+
+        bottom: 130px;
+        right: 30px;
+        font-size: 25px;
+
+    }
 }
 
 @media screen and (max-width: 912px) {
     .text {
         font-size: 35px;
+    }
+
+    .modal.login-modal {
+        padding-top: 33vh; /* Location of the box */
+    }
+
+    /* user menu */
+    #UserButton, 
+    #Close_userMenu {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        font-size: 80px;
+        padding: 20px;
+        border-radius: 99999px;
+    }
+    .user_menu {
+
+        bottom: 180px;
+        right: 30px;
+        font-size: 50px;
+
     }
 }
 
@@ -77,16 +215,106 @@
     .text {
         font-size: 25px;
     }
+
+    .modal.login-modal {
+        padding-top: 33vh; /* Location of the box */
+    }
+
+    /* user menu */
+    #UserButton, 
+    #Close_userMenu {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        font-size: 60px;
+        padding: 20px;
+        border-radius: 99999px;
+    }
+    .user_menu {
+
+        bottom: 160px;
+        right: 30px;
+        font-size: 40px;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* user menu */
+    #UserButton, 
+    #Close_userMenu {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        font-size: 40px;
+        padding: 20px;
+        border-radius: 99999px;
+    }
+
+    .user_menu {
+
+        bottom: 120px;
+        right: 30px;
+        font-size: 30px;
+
+    }
 }
 
 @media screen and (max-width: 540px) {
     .text {
         font-size: 25px;
     }
+
+    .modal.login-modal {
+        padding-top: 30vh; /* Location of the box */
+    }
+
+    /* user menu */
+    #UserButton, 
+    #Close_userMenu {
+        bottom: 10px;
+        right: 20px;
+        font-size: 25px;
+        padding: 15px;
+        border-radius: 99999px;
+    }
+    .user_menu {
+
+        bottom: 80px;
+        right: 14px;
+        font-size: 25px;
+        padding: 5px;
+
+    }
 }
 
 @media screen and (max-width: 420px) {
     .text {
         font-size: 20px;
+    }
+
+    .modal.login-modal {
+        padding-top: 25vh; /* Location of the box */
+    }
+
+    /* user menu */
+    #UserButton, 
+    #Close_userMenu {
+        bottom: 30px;
+        right: 10px;
+        font-size: 30px;
+        padding: 15px;
+        border-radius: 99999px;
+    }
+
+    .user_menu {
+
+        bottom: 110px;
+        right: 10px;
+        font-size: 25px;
+        padding: 2px;
+
     }
 }
