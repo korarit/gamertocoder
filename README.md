@@ -2,9 +2,17 @@
 
 
 
-<br>
+
 ## เกี่ยวกับผลงาน
 เป็นกิจกรรมให้ทำความรู้จักกับ blockman go ในด้านต่างๆ ผ่านการอ่านและการลุ้น
+
+
+## ประสบการณ์ผู้ใช้
+- background แบบสุ่ม
+- wallpaper แบบสุ่ม
+
+## มีการใช้งาน google font และ fontawesome
+- เรียกใช้ font Mitr จาก google font
 
 ## Path Folder
 - /json ไฟล์ข้อมูล assets ที่คัดแยกไว้
@@ -12,6 +20,7 @@
 - /css ใช้การเก็บไฟล์ css ที่ใช้การออกแบบแต่ละหน้า
     - /template ใช้การเก็บไฟล์ template เขียนรูปแบบ framework เพื่อเรียกใช้งาน
 - /images ใช้การเก็บไฟล์รูป (ไม่ได้ใช้งานแล้ว)
+
 
 ## Page Information
 - index หน้าแรก ทำความรู้จักกับ blockman go
