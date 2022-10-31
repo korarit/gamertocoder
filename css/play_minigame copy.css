@@ -178,13 +178,20 @@
 .modal.gacha-modal {
     padding-top: 20vh; /* Location of the box */
 }
+.modal.receive-modal {
+    padding-top: 20vh; /* Location of the box */
+}
+
+.receive-text {
+    font-size: 2rem;
+}
 
 /* exit button */
 #UserButton {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 99;
+    z-index: 10;
     font-size: 30px;
     border: none;
     outline: none;
@@ -475,6 +482,15 @@
     .modal.gacha-modal {
         padding-top: 30vh; /* Location of the box */
     }
+    .modal.receive-modal {
+        padding-top: 30vh; /* Location of the box */
+    }
+    .receive-text {
+        font-size: 1.5rem;
+    }
+    .receive-title {
+        font-size: 2rem;
+    }
     
     .modal-image {
         margin: auto;
@@ -510,7 +526,17 @@
         top: 62%;
         left: 7%;
     }
+
     .modal.gacha-modal {
         padding-top: 25vh; /* Location of the box */
+    }
+    .modal.receive-modal {
+        padding-top: 30vh; /* Location of the box */
+    }
+    .receive-text {
+        font-size: 1.2rem;
+    }
+    .receive-title {
+        font-size: 1.8rem;
     }
 }

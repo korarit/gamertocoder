@@ -270,6 +270,23 @@ async function random_minigame() {
   }, 50);
 }
 
+//รับรางวัล
+function receive_item(){
+  //max จำนวน coin สูงสุด
+  var max = 100000;
+  //min จำนวน coin ต่ำสุด
+  var min = 1000;
+  if(localStorage.getItem("receive") === null){
+    let coin = Math.floor(Math.random() * (max - min + 1) ) + min;
+    showModal("receiveModal");
+
+    document.getElementById("coin-receive").innerHTML = "ยินดีด้วยคุณได้รับ coin จำนวน <t style='color: #10D74A'>"+coin+"</t> <i class='fa-solid fa-coins'></i>";
+    localStorage.setItem("receive", coin);
+  }else{
+    alert("คุณได้รับรางวัลไปแล้ว");
+  }
+}
+
 
 //cooldown
 function cooldown (){
@@ -298,15 +315,18 @@ function cooldown (){
         if(milliseconds <= 0){
           document.getElementById("time-play").style.display = "none";
           document.getElementById("play-button").style.display = "block";
+          document.getElementById("receive-item").style.display = "none";
           localStorage.removeItem("nexttime");
           clearInterval(intervalID);
         }
       }, 1000);
       document.getElementById("time-play").style.display = "block";
       document.getElementById("play-button").style.display = "none";
+      document.getElementById("receive-item").style.display = "none";
     }else{
       document.getElementById("time-play").style.display = "none";
       document.getElementById("play-button").style.display = "block";
+      document.getElementById("receive-item").style.display = "none";
       localStorage.removeItem("nexttime");
       clearInterval(intervalID);
     }

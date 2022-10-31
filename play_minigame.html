@@ -41,7 +41,7 @@
 
                 <a href="/">หน้าหลัก</a>
                 <a class="navbar-item-active" href="#">กิจกรรม</a>
-                <a href="#about">ดาวน์โหลด</a>
+                <a href="/download.html">ดาวน์โหลด</a>
             </div>
         </div>
 
@@ -87,11 +87,25 @@
 
         </div>
 
+
+        <!-- receive item (รับรางวัล)-->
+        <div id="receiveModal" class="modal receive-modal">
+            <div class="modal-content width is-30">
+                <div class="modal-title receive-title">
+                    รับรางรัล จากกิจกรรม
+                </div>
+                <hr>
+                <div id="coin-receive" class="modal-text receive-text"></div>
+                <br>
+                <center><button onclick="closeModal('receiveModal');" class="button is-large is-primary">รับรางรัล</button></center>
+            </div>
+        </div>
+
         <!-- exit button -->
         <a href="/activity.html" id="UserButton"><i class="fa-solid fa-right-from-bracket"></i></a>
 
         <!-- gacha -->
-        <!-- login modal-->
+        <!-- gacha playing modal-->
         <div id="gachaModal" class="modal gacha-modal">
             <div class="row is-multiline">
                 <div class="column size-is-10">
@@ -107,6 +121,7 @@
                 </div>
             <div>
         </div>
+
     </body>
     <!-- script -->
     <script src="/js/play_minigame.js"></script>

@@ -1,0 +1,31 @@
+.container {
+    position: relative;
+    width: 100%;
+
+    border-radius: 8px;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.title-activity {
+    text-align: center;
+
+    font-size: 70px;
+    font-family: 'Mitr', sans-serif;
+    text-shadow: 4px 0 rgb(201, 99, 170), 0 2px rgb(201, 99, 170), 5px 0 black, 0 1px rgb(201, 99, 170);
+
+    color: rgb(255, 188, 252);
+    border-width: 20px;
+    border-color: #000;
+}
+
+.title-minigame {
+    text-align: center;
+
+    font-size: 70px;
+    font-family: 'Mitr', sans-serif;
+    text-shadow: 4px 0 rgb(39, 87, 192), 0 2px rgb(39, 87, 192), 5px 0 black, 0 1px rgb(39, 87, 192);
+
+    color: rgb(148, 221, 255);
+    border-width: 20px;
+    border-color: #000;
+}

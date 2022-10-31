@@ -462,7 +462,7 @@ body {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 30; /* Sit on top */
     padding-top: 30vh; /* Location of the box */
     left: 0;
     top: 0;
@@ -489,6 +489,10 @@ body {
     margin-top: 0;
 
     font-size: 25px;
+    font-family: 'Mitr', sans-serif;
+    text-align: center;
+}
+.modal-text{
     font-family: 'Mitr', sans-serif;
     text-align: center;
 }
