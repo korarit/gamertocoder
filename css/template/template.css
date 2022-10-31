@@ -11,6 +11,7 @@ body {
 
     overflow: hidden;
     background-color: hsla(309, 0%, 0%, 0.54);
+    z-index: 99999;
 
 }
 
@@ -20,7 +21,7 @@ body {
 
     left: 0;
 
-    z-index: 30;
+    z-index: 9999;
 }
 
 .navbar-logo {
@@ -190,10 +191,11 @@ body {
 }
 .is-align-center-point{
     position: absolute;
+
+    z-index: -1;
+
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }
 
@@ -844,7 +846,7 @@ body {
         display: none;
     }
     .navbar-list.responsive {
-        z-index: 2;
+        z-index: 9999;
         margin-top: 4rem;
         display: block;
         float: none;
@@ -913,7 +915,7 @@ body {
         display: none;
     }
     .navbar-list.responsive {
-        z-index: 2;
+        z-index: 99999;
         margin-top: 3.5rem;
         display: block;
         float: none;
@@ -952,7 +954,7 @@ body {
         display: none;
     }
     .navbar-list.responsive {
-        z-index: 2;
+        z-index: 999999;
         margin-top: 3.5rem;
         display: block;
         float: none;
@@ -982,7 +984,7 @@ body {
         display: none;
     }
     .navbar-list.responsive {
-        z-index: 2;
+        z-index: 9999;
         margin-top: 3.7rem;
         display: block;
         float: none;
