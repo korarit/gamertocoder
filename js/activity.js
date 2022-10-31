@@ -59,9 +59,9 @@ function nav_sticky(){
   var navbar = document.getElementById("navbar-body");
 
   if (window.pageYOffset > 0) {
-    navbar.classList.add("is-top")
+    navbar.classList.add("is-top-activity")
   } else {
-    navbar.classList.remove("is-top");
+    navbar.classList.remove("is-top-activity");
   }
 
   //console.log("pageY:"+window.pageYOffset+" sticky:"+navbar.offsetTop)

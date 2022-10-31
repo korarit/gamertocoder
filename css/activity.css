@@ -4,6 +4,26 @@
     border-radius: 8px;
     
     box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    
+}
+
+.navbar.is-top-activity {
+    position: relative;
+    width: 100%;
+
+    left: 0;
+
+    z-index: 2;
+}
+
+.is-align-center-point-activity{
+    position: relative;
+
+    z-index: 5;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
   
 .image-hover {
@@ -13,6 +33,7 @@
 
     border-radius: 8px;
 }
+
   
 .overlay {
     border-radius: 8px;
