@@ -259,11 +259,11 @@ body {
 }
 
 .button.is-light{
-    background-color: hsl(0, 0%, 96%);
+    background-color: hsl(0, 0%, 81%);
     color: hsl(0, 0%, 100%);
 }
 .button.is-light:hover{
-    background-color: hsl(0, 0%, 79%);
+    background-color: hsl(0, 0%, 56%);
     color: hsl(0, 0%, 100%);
 }
 

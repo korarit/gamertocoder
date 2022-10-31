@@ -59,6 +59,14 @@ function nav_sticky() {
 window.addEventListener("scroll", scoll_animation);
 window.addEventListener("scroll", nav_sticky);
 
+function navbar (){
+  var x = document.getElementById("list-page");
+  if (x.className === "navbar-list") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar-list";
+  }
+}
 
 //login modal
 function showModal(id) {
@@ -77,6 +85,17 @@ function closeModal(id) {
 
 }
 
+async function check_playgame(){
+  const data = await get_json("https://gamertocoder.garena.co.th/api/minigames");
+  var amount = JSON.parse(localStorage.getItem("playlist")).length;
+
+  if(amount >= data.length){
+    document.getElementById("time-play").style.display = "none";
+    document.getElementById("play-button").style.display = "none";
+    document.getElementById("receive-item").style.display = "block";
+  }
+  console.log(amount);
+}
 
 //ตัดคำ
 function cuttext(string, length){
@@ -86,15 +105,32 @@ function cuttext(string, length){
       return string;
 };
 
+function search_playlist (no){
+  var get_dataplaylist = JSON.parse(localStorage.getItem("playlist_data"));
+
+  var data =  get_dataplaylist.filter(x => x.no === no);
+  if(data.length === 0){
+    return false;
+  }else{
+    return data;
+  }
+
+}
+
 //list minigame
 async function minigame_list() {
   const data = await get_json("https://gamertocoder.garena.co.th/api/minigames");
+  var playlist = localStorage.getItem("playlist");
 
   let html = "";
-  for (let i = 0; i < data.length; i++) {
-    var description = cuttext(data[i]["description"], 200);
 
-    html += "<div class='column size-is-25'>"
+
+  //ไม่เคยเล่น
+  if(playlist === null){
+    for (let i = 0; i < data.length; i++) {
+      var description = cuttext(data[i]["description"], 200);
+
+      html += "<div class='column size-is-25'>"
       html += "<div class='container'>";
         html += "<img src='"+data[i]["icon"]+"' class='minigame-logo'>";
       
@@ -102,14 +138,59 @@ async function minigame_list() {
         html += "<div class='minigame-description'>"+description+"</div>";
         html += "<div class='text'>"+data[i]["name"]+"</div>";
       html += "</div>";
-    html += "</div>";
+      html += "</div>";
 
+    }
+  }
+
+  //เคยเล่น
+  else if(playlist !== null){
+
+    for (let i = 0; i < data.length; i++) {
+      var playlist_data = search_playlist(data[i]["no"]);
+      var description = cuttext(data[i]["description"], 200);
+
+      if(playlist_data === false){
+
+        html += "<div class='column size-is-25'>"
+          html += "<div class='container'>";
+            html += "<img src='"+data[i]["icon"]+"' class='minigame-logo'>";
+          
+            html += "<div class='about-minigame'></div>";        
+            html += "<div class='minigame-description'>"+description+"</div>";
+            html += "<div class='text'>"+data[i]["name"]+"</div>";
+          html += "</div>";
+        html += "</div>";
+
+      }else if (playlist_data !== false){
+        html += "<div class='column size-is-25'>"
+          html += "<div class='container-1'>";
+            html += "<img src='"+data[i]["icon"]+"' class='minigame-logo'>";
+          
+            html += "<div class='about-minigame'></div>";        
+            html += "<div class='minigame-description'>"+description+"</div>";
+            
+            html += "<div class='text'>"+data[i]["name"]+"</div>";
+
+            html += "<div class='used-to-play'></div>";
+            html += "<div class='play-time'> เล่นเมื่อ"+playlist_data[0]["date"]+"</div>";
+          html += "</div>";
+        html += "</div>";
+      }
+
+    }
   }
   document.getElementById("list-minigame").innerHTML = html;
 }
 
+function gacha_again(){
+  document.getElementById("gacha-again").style.display = "none";
+  document.getElementById("receive-gacha").style.display = "none";
+}
+
 //minigame random
 async function random_minigame() {
+  check_playgame();
   const data = await get_json("https://gamertocoder.garena.co.th/api/minigames");
 
   var hour = 24 * 3600000;
@@ -121,7 +202,11 @@ async function random_minigame() {
   cooldown();
 
   showModal("gachaModal");
+
   //กาชาปอง
+  var date_now = new Date();
+
+  const playlist_data = [];
   const list_minigame = [];
 
   let intervalID = null
@@ -132,26 +217,42 @@ async function random_minigame() {
     document.getElementById("gacha-img").setAttribute("src", data[random]["icon"]);
 
     console.log(time);
-    if(time >= 6000){
+    if(time === 6000){
+      var array_data = {};
       let id_minigame = data[random]["no"];
+
+      //บันทึกเวลาเล่น และวันที่
+      array_data["no"] = data[random]["no"];
+      array_data["date"] = date_now.getDate()+"/"+(date_now.getMonth() + 1)+"/"+date_now.getFullYear();
+      array_data["hours"] = date_now.getHours();
+      array_data["minutes"] = date_now.getMinutes();
 
       //ไม่เคยเล่น
       if(localStorage.getItem("playlist") === null){
 
         list_minigame.push(id_minigame);
+        playlist_data.push(array_data);
+
         localStorage.setItem("playlist", JSON.stringify(list_minigame));
+        localStorage.setItem("playlist_data", JSON.stringify(playlist_data));
 
         document.getElementById("receive-gacha").style.display = "block";
         document.getElementById("gacha-again").style.display = "none";
       }
 
       //เคยเล่น
-      if(localStorage.getItem("playlist") !== null){
+      else if(localStorage.getItem("playlist") !== null){
+
         var playlist = JSON.parse(localStorage.getItem("playlist"));
-        if(playlist.includes(list_minigame) === false){
+        var get_dataplaylist = JSON.parse(localStorage.getItem("playlist_data"));
+
+        if(playlist.includes(id_minigame) === false){
 
           playlist.push(id_minigame);
+          get_dataplaylist.push(array_data);
+
           localStorage.setItem("playlist", JSON.stringify(playlist));
+          localStorage.setItem("playlist_data", JSON.stringify(get_dataplaylist));
           
           document.getElementById("gacha-again").style.display = "none";
           document.getElementById("receive-gacha").style.display = "block";

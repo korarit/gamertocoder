@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>MiniGame</title>
+        <!-- css template-->
+        <link rel="stylesheet" href="/css/template/animation.css">
+        <link rel="stylesheet" href="/css/template/template.css">
+
+        <!-- css page -->
+        <link rel="stylesheet" href="/css/play_minigame.css">
+
+        <!-- fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+
+        <!-- fontawesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    </head>
+    <body onload="random_assets();minigame_list();cooldown();check_playgame()" id="body_main">
+        <!-- navbar -->
+        <div class="navbar" id="navbar-body">
+            <div class="navbar-logo">
+                <div class="nav-logo-large">
+                    <img id="logo" src="https://cdngarenanow-a.akamaihd.net/webth/cdn/garena/gamertocoder/bmg-logo/01.png" width="350px"/>
+                </div>
+                <div class="nav-logo-small">
+                    <img id="logo" src="https://cdngarenanow-a.akamaihd.net/webth/cdn/garena/gamertocoder/bmg-logo/02.png" width="350px"/>
+                </div>
+            </div>
+
+            <div class="burger" onclick="navbar()">
+                <i class="fa fa-bars"></i>
+            </div>
+            
+            <div class="navbar-list" id="list-page">
+
+                <a href="/">หน้าหลัก</a>
+                <a class="navbar-item-active" href="/activity.html">กิจกรรม</a>
+                <a href="#">ดาวน์โหลด</a>
+            </div>
+        </div>
+
+        <!-- ดาวน์โหลด-->
+        <div class="layout" style="width: 90%;">
+
+            <div class="is-align-center-point" style="width: 70%;">
+                <div class="row">
+                    <div class="column size-is-10">
+                        <p class="title-activity">ดาวน์โหลด</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column size-is-1">
+                        <center><button class="button is-large is-light" style="width: 70%;text-align: center;" onclick="random_minigame()"><i class="fa-brands fa-google-play"></i> Google Play</button></center>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="column size-is-5">
+                        <center><button class="button is-large is-danger" style="width: 70%;text-align: center;" onclick="random_minigame()"><i class="fa-brands fa-app-store-ios"></i> App Store</button></center>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="column size-is-5">
+                        <center><button class="button is-large is-info" style="width: 70%;text-align: center;" onclick="random_minigame()"><i class="fa-brands fa-windows"></i> Windows Store</button></center>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+       
+    </body>
+    <!-- script -->
+    <script src="/js/download.js"></script>
+</html>

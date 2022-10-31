@@ -25,14 +25,23 @@
         <!-- navbar -->
         <div class="navbar" id="navbar-body">
             <div class="navbar-logo">
-                <img id="logo" src="https://cdngarenanow-a.akamaihd.net/webth/cdn/garena/gamertocoder/bmg-logo/01.png" width="350px"/>
+                <div class="nav-logo-large">
+                    <img id="logo" src="https://cdngarenanow-a.akamaihd.net/webth/cdn/garena/gamertocoder/bmg-logo/01.png" width="350px"/>
+                </div>
+                <div class="nav-logo-small">
+                    <img id="logo" src="https://cdngarenanow-a.akamaihd.net/webth/cdn/garena/gamertocoder/bmg-logo/02.png" width="350px"/>
+                </div>
             </div>
 
-            <div class="navbar-list" >
+            <div class="burger" onclick="navbar()">
+                <i class="fa fa-bars"></i>
+            </div>
+            
+            <div class="navbar-list" id="list-page">
 
-                <div class="navbar-list-item"><a href="#home">หน้าหลัก</a></div>
-                <div class="navbar-list-item"><a class="navbar-item-active" href="#contact">กิจกรรม</a></div>
-                <div class="navbar-list-item"><a href="#about">ดาวน์โหลด</a></div>
+                <a href="#home">หน้าหลัก</a>
+                <a class="navbar-item-active" href="#">กิจกรรม</a>
+                <a href="#about">ดาวน์โหลด</a>
             </div>
         </div>
 
@@ -40,21 +49,21 @@
         <div class="layout layout-verylarge">
 
             <div class="is-align-center-point" style="width: 90%;">
-                <div class="row" style="height: auto">
+                <div class="row is-multiline" style="height: auto">
                     <div class="column size-is-5 animated fadeInUp">
-                        <a href="/play_character.html"><div class="container">
-                            <center><img src="" class="image-hover" id="wallpaper1"></center>
-                            <div class="overlay"></div>
-                            <div class="text">กิจกรรมเล่นทุกตัวละคร รับรางรัล</div>
-                        </div></a>
-                    </div>
-                    <div class="column size-is-5 animated-2 fadeInUp">
                             <a href="/play_minigame.html"><div class="container">
                                 <center><img src="" class="image-hover" id="wallpaper2"></center>
                                 <div class="overlay"></div>
                                 <div class="text">กิจกรรมเล่นทุกมินิเกม รับรางรัล</div>
                             </div></a>
 
+                    </div>
+                    <div class="column size-is-5 animated-2 fadeInUp">
+                        <a href="#"><div class="container">
+                            <center><img src="" class="image-hover" id="wallpaper1"></center>
+                            <div class="overlay"></div>
+                            <div class="text">กิจกรรมเล่นทุกตัวละคร รับรางรัล<br>(กิจกรรมเปิดวันที่ 32/13/9999)</div>
+                        </div></a>
                     </div>
                 </div>
                 
@@ -100,14 +109,7 @@
                     <i class="fa-solid fa-right-from-bracket menu-icon" onclick="logout()"></i>
                 </div>
             </div>
-            <div class="row" style="height: 0.5rem;">
-                
-            </div>
-            <div class="row">
-                <div class="column size-is-10">
-                    <i class="fa-solid fa-user menu-icon"></i>
-                </div>
-            </div>
+        
         </div>
 
         <!-- close user menu-->
