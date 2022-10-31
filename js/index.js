@@ -63,3 +63,11 @@ function nav_sticky(){
 window.addEventListener("scroll", scoll_animation);
 window.addEventListener("scroll", nav_sticky);
 
+function navbar (){
+  var x = document.getElementById("list-page");
+  if (x.className === "navbar-list") {
+    x.className += " responsive";
+  } else {
+    x.className = "navbar-list";
+  }
+}

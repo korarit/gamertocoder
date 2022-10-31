@@ -22,14 +22,22 @@
         <!-- navbar -->
         <div class="navbar" id="navbar-body">
             <div class="navbar-logo">
-                <img id="logo" src="https://cdngarenanow-a.akamaihd.net/webth/cdn/garena/gamertocoder/bmg-logo/01.png" width="350px"/>
+                <div class="nav-logo-large">
+                    <img id="logo" src="https://cdngarenanow-a.akamaihd.net/webth/cdn/garena/gamertocoder/bmg-logo/01.png" width="350px"/>
+                </div>
+                <div class="nav-logo-small">
+                    <img id="logo" src="https://cdngarenanow-a.akamaihd.net/webth/cdn/garena/gamertocoder/bmg-logo/02.png" width="350px"/>
+                </div>
             </div>
 
-            <div class="navbar-list" >
+            <div class="navbar-list" id="list-page">
 
-                <div class="navbar-list-item"><a class="navbar-item-active" href="#home">หน้าหลัก</a></div>
-                <div class="navbar-list-item"><a href="#contact">กิจกรรม</a></div>
-                <div class="navbar-list-item"><a href="#about">ดาวน์โหลด</a></div>
+                <a class="navbar-item-active" href="#home">หน้าหลัก</a>
+                <a href="#contact">กิจกรรม</a>
+                <a href="#about">ดาวน์โหลด</a>
+            </div>
+            <div class="burger" onclick="navbar()">
+                <i class="fa fa-bars"></i>
             </div>
         </div>
 
@@ -44,7 +52,7 @@
                 </div>
                 <div class="row">
                     <div class="column size-is-10">
-                        <center><button class="button-large button-success" onclick="click_toLayout(1)" style="max-width: 40rem;">อ่านเพิ่มเติม</button></center>
+                        <center><button class="button is-large is-success" onclick="click_toLayout(1)" style="max-width: 40rem;">อ่านเพิ่มเติม</button></center>
                     </div>
                 </div>
             </div>
@@ -53,7 +61,7 @@
 
         <!-- more data-->
         <div class="layout layout-small is-align-center" style="width: 80%;">
-            <div class="row">
+            <div class="row is-multiline">
                 <div class="column size-is-3">
                     <div class="image animated-1">
                     <img id="character_speak" style="width: 100%;">
