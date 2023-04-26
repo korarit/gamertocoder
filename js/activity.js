@@ -7,13 +7,13 @@ async function get_json(url){
 
 async function random_assets (){
   //สุ่ม background image จาก backend
-  const background = await get_json('../json/background.json');
+  const background = await get_json('./json/background.json');
   //console.log(background["background"])
   var random_background = Math.floor(Math.random() * ((background["background"].length - 1) - 0 + 1)) + 0;
   document.getElementById("body_main").setAttribute("background", background["background"][random_background]);
 
   //สุ่ม wallpaper card background
-  const wallpaper = await get_json('/json/wallpapers.json');
+  const wallpaper = await get_json('./json/wallpapers.json');
   var wallpaper_character1 = Math.floor(Math.random() * ((wallpaper["wallpaper"].length - 1) - 0 + 1)) + 0;
   var wallpaper_character2 = Math.floor(Math.random() * ((wallpaper["wallpaper"].length - 1) - 0 + 1)) + 0;
 
